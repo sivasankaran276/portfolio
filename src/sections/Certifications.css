@@ -1,0 +1,185 @@
+/**
+ * Sorna A — Engineering Portfolio
+ * Certifications & Workshops Section Styles
+ *
+ * Aesthetic: Minimal, premium editorial credential layout
+ * Clear distinction between NPTEL certifications and hands-on workshops
+ */
+
+.certifications-section {
+  position: relative;
+  background-color: var(--color-bg);
+  padding-block: var(--section-padding-y);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   Editorial Dual-Column Grouping
+   ========================================================================== */
+
+.certifications-groups-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: flex-start;
+}
+
+.certifications-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.certifications-column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.certifications-column-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.certifications-column-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-accent);
+  background-color: var(--color-accent-soft);
+  border: 1px solid var(--color-accent-border);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   Credential Card
+   ========================================================================== */
+
+.credential-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: clamp(1.25rem, 2.2vw, 1.75rem);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-base),
+              border-color var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+.credential-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-lift);
+}
+
+.credential-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.credential-icon-box {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent-soft);
+  border: 1px solid var(--color-accent-border);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.credential-card:hover .credential-icon-box {
+  transform: scale(1.08);
+  background-color: rgba(132, 148, 119, 0.22);
+}
+
+.credential-period-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  white-space: nowrap;
+}
+
+.credential-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 1.5vw, 1.3rem);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-3);
+}
+
+.credential-provider-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: auto;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.credential-provider {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.credential-type-pill {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .certifications-groups-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+}
+
+@media (max-width: 540px) {
+  .credential-card {
+    padding: var(--space-4);
+  }
+
+  .credential-card-top {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+}

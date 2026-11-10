@@ -1,0 +1,258 @@
+/**
+ * Sorna A — Engineering Portfolio
+ * Refined Editorial Footer Styles
+ *
+ * Palette: Deep charcoal background (#252820), warm ivory text (#F8F7F2), muted sage accents (#849477)
+ */
+
+.footer-root {
+  background-color: var(--color-text-primary);
+  color: var(--color-bg);
+  padding-top: clamp(3.5rem, 6vw, 5.5rem);
+  padding-bottom: var(--space-8);
+  border-top: 1px solid rgba(229, 227, 218, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Main Footer Grid Layout
+   ========================================================================== */
+
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: flex-start;
+  margin-bottom: var(--space-12);
+}
+
+/* ==========================================================================
+   Left Column: Brand & Professional Identity
+   ========================================================================== */
+
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 52ch;
+}
+
+.footer-brand-name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-bg);
+  letter-spacing: var(--tracking-tight);
+  text-decoration: none;
+  display: inline-block;
+  transition: color var(--transition-fast);
+}
+
+.footer-brand-name:hover {
+  color: var(--color-accent);
+}
+
+.footer-identity {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.footer-identity::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 1px;
+  background-color: var(--color-accent);
+}
+
+.footer-desc {
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: rgba(248, 247, 242, 0.72);
+}
+
+.footer-contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.footer-detail-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: rgba(248, 247, 242, 0.8);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-detail-item svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.footer-detail-item:hover {
+  color: var(--color-bg);
+}
+
+.footer-email-link {
+  color: var(--color-accent);
+}
+
+.footer-email-link:hover {
+  color: var(--color-bg);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ==========================================================================
+   Right Column: Navigation Links & Back to Top
+   ========================================================================== */
+
+.footer-nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.footer-nav-heading {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: rgba(248, 247, 242, 0.5);
+}
+
+.footer-nav-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3) var(--space-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav-link {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: rgba(248, 247, 242, 0.78);
+  text-decoration: none;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  width: fit-content;
+}
+
+.footer-nav-link:hover {
+  color: var(--color-accent);
+  transform: translateX(3px);
+}
+
+/* Back To Top Button */
+.footer-back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: rgba(248, 247, 242, 0.85);
+  background-color: rgba(248, 247, 242, 0.06);
+  border: 1px solid rgba(248, 247, 242, 0.15);
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  width: fit-content;
+  text-decoration: none;
+  margin-top: var(--space-2);
+}
+
+.footer-back-to-top svg {
+  color: var(--color-accent);
+  transition: transform var(--transition-fast);
+}
+
+.footer-back-to-top:hover {
+  background-color: rgba(132, 148, 119, 0.2);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.footer-back-to-top:hover svg {
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Bottom Horizontal Divider & Copyright Bar
+   ========================================================================== */
+
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(248, 247, 242, 0.1);
+  margin-bottom: var(--space-6);
+}
+
+.footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(248, 247, 242, 0.55);
+}
+
+.footer-bottom-bar a {
+  color: rgba(248, 247, 242, 0.7);
+  text-decoration: none;
+}
+
+.footer-bottom-bar a:hover {
+  color: var(--color-accent);
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+
+@media (max-width: 860px) {
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer-nav-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 540px) {
+  .footer-root {
+    padding-top: var(--space-10);
+  }
+
+  .footer-nav-links {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+}

@@ -1,0 +1,224 @@
+/**
+ * Sorna A — Engineering Portfolio
+ * Technical Skills Section Styles
+ *
+ * Aesthetic: Minimal, premium editorial presentation
+ * Warm ivory background, 5 visually distinct cards in a balanced 2+3 layout
+ */
+
+.skills-section {
+  position: relative;
+  background-color: var(--color-bg);
+  padding-block: var(--section-padding-y);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   5-Card Balanced Editorial Grid
+   ========================================================================== */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+/* Row 1: Top 2 Major Categories */
+.skills-card-electronics {
+  grid-column: span 3;
+}
+
+.skills-card-instrumentation {
+  grid-column: span 3;
+}
+
+/* Row 2: Bottom 3 Specialized Categories */
+.skills-card-embedded {
+  grid-column: span 2;
+}
+
+.skills-card-automation {
+  grid-column: span 2;
+}
+
+.skills-card-software {
+  grid-column: span 2;
+}
+
+/* ==========================================================================
+   Skill Card Architecture
+   ========================================================================== */
+
+.skill-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-base),
+              border-color var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-lift);
+}
+
+/* Card Header */
+.skill-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.skill-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent-soft);
+  border: 1px solid var(--color-accent-border);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.skill-card:hover .skill-icon-box {
+  transform: scale(1.05);
+  background-color: rgba(132, 148, 119, 0.2);
+}
+
+.skill-card-number {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wider);
+}
+
+/* Card Title & Lead */
+.skill-card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.skill-card-desc {
+  font-size: var(--text-xs);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+/* Subcategory Groups */
+.skill-subcategories {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: auto;
+}
+
+.skill-subcategory {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.skill-subcategory-name {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.skill-subcategory-name::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 1px;
+  background-color: var(--color-accent);
+}
+
+/* Compact Technical Tags */
+.skill-tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.skill-tag {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: var(--tracking-normal);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.skill-tag:hover {
+  background-color: var(--color-accent-soft);
+  border-color: var(--color-accent-border);
+  color: var(--color-accent-hover);
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-5);
+  }
+
+  .skills-card-electronics,
+  .skills-card-instrumentation,
+  .skills-card-embedded,
+  .skills-card-automation {
+    grid-column: span 1;
+  }
+
+  .skills-card-software {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .skills-card-electronics,
+  .skills-card-instrumentation,
+  .skills-card-embedded,
+  .skills-card-automation,
+  .skills-card-software {
+    grid-column: span 1;
+  }
+
+  .skill-card {
+    padding: var(--space-4);
+  }
+}
